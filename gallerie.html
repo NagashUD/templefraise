@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie - Temple de la Fraise</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #f8f5f1;
+      color: #2e2e2e;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #8c1c13;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .section h2 {
+      color: #8c1c13;
+      border-bottom: 2px solid #8c1c13;
+      padding-bottom: 0.5rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 1rem;
+    }
+    .card img {
+      width: 50%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card h3 {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+      color: #8c1c13;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  background: #fff;
+  color: #2e2e2e;
+  max-width: 700px;
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+.lightbox-content img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #8c1c13;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Galerie des Fraisiers</h1>
+    <p>Découvrez les espèces et cultivars rares du Temple de la Fraise</p>
+  </header>
+  <main class="container">
+    <section class="section" id="cultivars">
+      <h2>Cultivars</h2>
+      <div class="gallery">
+        <div class="card">
+          <img src="images/mara_des_bois.jpg" alt="Mara des Bois">
+          <h3><em>Fragaria × ananassa</em> 'Mara des Bois'</h3>
+        </div>
+        <div class="card">
+          <img src="images/gariguette.jpg" alt="Gariguette">
+          <h3><em>Fragaria × ananassa</em> 'Gariguette'</h3>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="botaniques">
+      <h2>Botaniques</h2>
+      <div class="gallery">
+  <div class="card" onclick="openLightbox()" style="cursor:pointer;">
+  <img src="img/daltoniana_plante.jpg" alt="Fragaria daltoniana">
+  <h3><em>Fragaria daltoniana</em></h3>
+</div>
+        <div class="card">
+          <img src="images/patagonia.jpg" alt="Fragaria patagonia">
+          <h3><em>Fragaria patagonia</em></h3>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Temple de la Fraise - Galerie photo</p>
+  </footer>
+<div id="lightbox" style="display:none;">
+  <div class="lightbox-content">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    
+<h2><em>Fragaria daltoniana</em></h2>
+
+<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
+  <div style="text-align: center;">
+    <img src="img/daltoniana_plante.jpg" alt="Plant de Fragaria daltoniana" style="max-width: 200px; height: auto; border-radius: 8px;" />
+    <p style="margin-top: 0.5rem;"><strong>Plant</strong></p>
+  </div>
+  <div style="text-align: center;">
+    <img src="img/daltoniana_fruit.jpg" alt="Fruit de Fragaria daltoniana" style="max-width: 200px; height: auto; border-radius: 8px;" />
+    <p style="margin-top: 0.5rem;"><strong>Fruit</strong></p>
+  </div>
+</div>
+
+<p>
+  <em>Fragaria daltoniana</em> est une espèce de plante à fleurs de la famille des Rosacées. Elle est originaire de l'Himalaya, notamment du Népal. Son fruit possède une saveur médiocre et n’a aucune valeur commerciale.
+</p>
+<p>
+  Toutes les fraises possèdent un nombre haploïde de base de 7 chromosomes. <em>Fragaria daltoniana</em> est une espèce diploïde, comportant 2 paires de ces chromosomes, soit un total de 14. Elle est l'une des deux espèces de fraisiers à contenir un génome résistant au froid, ce qui peut améliorer la croissance et le rendement des fraisiers de jardin soumis à des stress abiotiques.
+</p>
+<p style="font-size:0.9em; color:gray;">
+  Photos fournies par le jardin botanique de Leiden (Rogier Van Vugt) et une collaboratrice de terrain.
+</p>
+<script>
+  function openLightbox() {
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+</body>
+</html>
